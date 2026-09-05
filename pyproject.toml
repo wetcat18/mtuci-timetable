@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mtuci-timetable"
+version = "0.1.0"
+description = "Неофициальный клиент к расписанию занятий МТУСИ"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+keywords = ["mtuci", "мтуси", "timetable", "schedule", "расписание", "bitrix"]
+dependencies = ["requests>=2.25"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "responses>=0.23"]
+
+[project.urls]
+Source = "https://github.com/wetcat/mtuci-timetable"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mtuci_timetable"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
